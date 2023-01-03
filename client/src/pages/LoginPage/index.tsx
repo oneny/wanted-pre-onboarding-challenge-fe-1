@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export const LoginPage = () => {
+  
   return (
-    <h1>LoginPag</h1>
-  )
-}
+    <div>
+      <h1 className='ir'>LoginPage</h1>
+      hi
+    </div>
+  );
+};
