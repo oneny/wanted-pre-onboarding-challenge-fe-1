@@ -1,4 +1,3 @@
-import { signin } from '@/api/auth';
 import axios from '@/api/axios';
 import { useInput } from '@/hooks/useInput';
 import { AxiosError } from 'axios';
@@ -23,7 +22,6 @@ export const SigninForm = () => {
   const emailRef = useRef<HTMLInputElement>(null);
 
   const from = location?.state?.from?.pathname || '/todos';
-  console.log(validEmail, validPassword)
   const canSinin = validEmail && validPassword;
 
   useEffect(() => {
@@ -54,7 +52,7 @@ export const SigninForm = () => {
         email,
         password,
       });
-      localStorage.setItem(token, JSON.stringify(token));
+      localStorage.setItem('token', JSON.stringify(token));
       setEmail('');
       setPassword('');
       navigate(from);

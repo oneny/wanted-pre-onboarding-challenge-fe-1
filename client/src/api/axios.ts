@@ -18,9 +18,10 @@ export const axiosPrivate = axios.create({
 axiosPrivate.interceptors.request.use(
   (config) => {
     const token = JSON.parse(localStorage.getItem('token') || '');
+    console.log('toekn', token);
 
-    if ('Authoirzation' in (config.headers as AxiosHeaders)) {
-      (config.headers as AxiosHeaders).set('Authoirzation', token);
+    if (!('authorization' in (config.headers as AxiosHeaders))) {
+      (config.headers as AxiosHeaders).set('authorization', token);
     }
 
     return config;
