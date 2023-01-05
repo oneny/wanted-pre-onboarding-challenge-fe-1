@@ -22,7 +22,6 @@ export default createGlobalStyle`
     color: inherit;
   }
   input, button {
-    border: none;
     background: none;
     font-size: inherit;
     font: inherit;
